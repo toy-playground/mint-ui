@@ -38,7 +38,6 @@ const getCandyMachineId = (): anchor.web3.PublicKey | undefined => {
   }
 };
 
-
 const candyMachineId = getCandyMachineId();
 const network = "devnet" as WalletAdapterNetwork;
 const rpcHost = anchor.web3.clusterApiUrl("devnet");

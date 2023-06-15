@@ -5,9 +5,7 @@ import { CircularProgress } from "@mui/material";
 import { GatewayStatus, useGateway } from "@civic/solana-gateway-react";
 import { useEffect, useState, useRef } from "react";
 import { useConnection } from "@solana/wallet-adapter-react";
-import {
-  removeAccountChangeListener,
-} from "@identity.com/solana-gateway-ts";
+import { removeAccountChangeListener } from "@identity.com/solana-gateway-ts";
 
 export const CTAButton = styled(Button)`
   width: 100%;
@@ -35,7 +33,7 @@ export const MintButton = ({
 }) => {
   const connection = useConnection();
   const [verified, setVerified] = useState(false);
-  const {  gatewayStatus } = useGateway();
+  const { gatewayStatus } = useGateway();
   const [webSocketSubscriptionId] = useState(-1);
   const [clicked, setClicked] = useState(false);
   const [waitForActiveToken, setWaitForActiveToken] = useState(false);
@@ -105,8 +103,8 @@ export const MintButton = ({
     <CTAButton
       disabled={isMinting || !isActive}
       onClick={async () => {
-          await onMint();
-          setClicked(false);
+        await onMint();
+        setClicked(false);
       }}
       variant="contained"
     >

@@ -473,7 +473,13 @@ const Home = (props: HomeProps) => {
           variant="caption"
           align="center"
           display="block"
-          style={{ marginTop: 7, color: "grey" ,fontSize:32,fontWeight:"bold",marginBottom:20}}
+          style={{
+            marginTop: 7,
+            color: "grey",
+            fontSize: 32,
+            fontWeight: "bold",
+            marginBottom: 20,
+          }}
         >
           Test Degods Mint
         </Typography>
