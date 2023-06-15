@@ -62,7 +62,7 @@ const Home = (props: HomeProps) => {
     message: "",
     severity: undefined,
   });
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [endDate, setEndDate] = useState<Date>();
   const [itemsRemaining, setItemsRemaining] = useState<number>();
   const [isWhitelistUser, setIsWhitelistUser] = useState(false);
@@ -224,10 +224,9 @@ const Home = (props: HomeProps) => {
           const collectionPDAAccount = await connection.getAccountInfo(
             collectionPDA
           );
-          cndy.state.isActive = active;
-          setIsActive(isActive);
-          cndy.state.isPresale = presale;
-          setIsPresale(presale);
+
+          setIsActive((cndy.state.isActive = active));
+          setIsPresale((cndy.state.isPresale = presale));
           setCandyMachine(cndy);
 
           const txnEstimate =
@@ -426,7 +425,7 @@ const Home = (props: HomeProps) => {
   };
 
   const toggleMintButton = () => {
-    let active = isActive || isPresale;
+    let active = !isActive || isPresale;
 
     if (active) {
       if (candyMachine!.state.isWhitelistOnly && !isWhitelistUser) {

@@ -204,7 +204,7 @@ export const getCandyMachineState = async (
       itemsRedeemed,
       itemsRemaining,
       isSoldOut: itemsRemaining === 0,
-      isActive: true,
+      isActive: false,
       isPresale: false,
       isWhitelistOnly: false,
       goLiveDate: state.data.goLiveDate,
